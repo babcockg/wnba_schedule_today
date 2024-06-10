@@ -1,0 +1,32 @@
+<!-- https://www.espn.com/wnba/schedule/_/date/20240611 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <script>
+        function getDate_yyyymmdd() {
+
+            const date = new Date();
+        
+            const yyyy = date.getFullYear();
+            const mm = String(date.getMonth() + 1).padStart(2,'0');
+            const dd = String(date.getDate()).padStart(2,'0');
+        
+            return `${yyyy}${mm}${dd}`
+        }
+        url = "https://www.espn.com/wnba/schedule/_/" + getDate_yyyymmdd()
+        window.location.replace(url)        
+    </script>
+  </body>
+</html>
