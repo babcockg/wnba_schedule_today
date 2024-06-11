@@ -14,7 +14,22 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   </head>
   <body>
+    <div style="font-family: Arial, Helvetica, sans-serif;font-size:12pt;">
+      Redirecting to WNBA schedule for today in <span id="secs"></span> seconds
+    </div>
+
     <script>
+        secs = 5
+        
+        var x = setInterval(function() {
+          if (secs == 0){
+            clearInterval(x)
+            redirection()
+          }
+          $('#secs').text(secs)
+          secs -= 1
+        }, 1000)
+
         function getDate_yyyymmdd() {
 
             const date = new Date();
@@ -25,8 +40,15 @@
         
             return `${yyyy}${mm}${dd}`
         }
-        url = "https://www.espn.com/wnba/schedule/_/" + getDate_yyyymmdd()
-        window.location.replace(url)        
+
+        function redirection(){
+          url = "https://www.espn.com/wnba/schedule/_/" + getDate_yyyymmdd()
+          window.location.replace(url)        
+        }
+
+        // setTimeout(redirection,delay_time)
+        // $('#secs').text(delay_time/1000)
+
     </script>
   </body>
 </html>
