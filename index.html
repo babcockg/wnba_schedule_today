@@ -21,15 +21,14 @@
     <script>
         secs = 5
         $('#secs').text(secs)
-        // var x = setInterval(function() {
-        //   if (secs == 0){
-        //     clearInterval(x)
-        //     alert('Done!')
-        //     // redirection()
-        //   }
-        //   $('#secs').text(secs)
-        //   secs -= 1
-        // }, 1000)
+        var x = setInterval(function() {
+          if (secs == 0){
+            clearInterval(x)
+            // redirection()
+          }
+          $('#secs').text(secs)
+          secs -= 1
+        }, 1000)
 
         function getDate_yyyymmdd() {
 
